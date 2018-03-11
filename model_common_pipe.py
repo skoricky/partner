@@ -7,7 +7,7 @@ class model_common_pipe: # pipe model
         self.pipe_vol = pipe_vol  # Общий объем коллектора/трубы, м3
         self.completed_vol = completed_vol  # Заполненный объем, м3
         self.density = 1000.0  # Текущая плотность перекачиваемой среды, кг/м3
-        self.d_vol = 0.0  # Разовый объем, м3
+        self.d_vol = 0.0  # Мгновенный объем, м3
         self.in_vol = [0.0]
         self.out_vol = [0.0]
         self.__out_vol_k = [0.0]  # Долевые коэффициенты исходящих расходов по характеристике клапанов/арматуры на выходе из коллектора/трубы

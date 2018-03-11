@@ -10,14 +10,24 @@ class model_df: # flow model
         self.string_eas_rk = string_eas_rk
         self.string_eas_p1 = string_eas_p1
         self.string_eas_p2 = string_eas_p2
+        self.eas_rk = 0.0
+        self.eas_p1 = 0.0
+        self.eas_p2 = 0.0
         self.density = 1000.0
 
         self.current_f = 0.0
         self.maximum_f = 250.0
+        self.Du = 0.4
 
-    def get_current_f(self, eas_p1, eas_p2, eas_rk, k=1):
+    def get_current_f(self, k=1):
+        eas_rk = self.eas_rk
+        eas_p1 = self.eas_p1
+        eas_p2 = self.eas_p2
+        Du = self.Du
+        density = self.density
+
         if eas_p1 - eas_p2 >= 0.0:
-            f = (0.25 * 3.14159 * math.pow(eas_rk, 2) / 100) * math.sqrt(2 * self.density * (eas_p1 - eas_p2)) * k
+            f = (0.25 * 3.14159 * math.pow(eas_rk, 2) / 100 * Du) * math.sqrt(2 * density * (eas_p1 - eas_p2)) * k
             if f >= self.maximum_f:
                 self.current_f = self.maximum_f
             else:
