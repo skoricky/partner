@@ -5,7 +5,7 @@ from fun_piecewise import *
 import math
 
 
-class model_pump: # pump model
+class model_pump:  # pump model
 
     def __init__(self, string_open_es_m, string_current_p):  # рассмотреть возможность подключения к базе по KKS
 
